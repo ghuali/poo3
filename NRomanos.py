@@ -16,8 +16,23 @@ def roman2int(romval):
 
     return total
 
+def int2roman(valrom):
+    total = ""
+    listanum = 0
+    
+    while valrom > 0:
+        div = valrom // romanos[listanum]
+        valrom %= romanos[listanum]
+        total += romanos[listanum] * div
+        listanum += 1
+
+
+    return total
 
 if __name__ == "__main__":
-    tests = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "XIV", "CXC", "MIM"]
+    tests = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "XIV", "CXC", "MIM","XXX"]
     for test in tests:
         print(test, roman2int(test))
+    testeo = [12,5,20,4]
+    for testt in testeo:
+        print(testt,int2roman(testt))
