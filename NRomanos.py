@@ -16,7 +16,8 @@ def roman2int(romval):
 
     return total
 
-tests = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "XIV", "CXC", "MIM"]
 
-for test in tests:
-    print(test, roman2int(test))
+if __name__ == "__main__":
+    tests = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "XIV", "CXC", "MIM"]
+    for test in tests:
+        print(test, roman2int(test))
