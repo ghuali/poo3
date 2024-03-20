@@ -1,9 +1,13 @@
 class Romano:
-    def __init__(self, roman):
-        self.roman = roman
-
+    def __init__(self) -> None:
+        self.romanos = {
+            1:"I", 5:"V", 10:"X", 50:"L", 100:"C", 400:"CD",500:"D",900:"CM",1000:"M"
+        }
+       
         
-
+    
+        
+    
     @staticmethod
     def roman2int(romval):
         romanos = {'I': 1, 'V': 5, 'X': 10,
@@ -16,24 +20,16 @@ class Romano:
             prev = valor
 
         return total
-
-def int2roman(valrom):
-    total = ""
-    listanum = 0
-    
-    while valrom > 0:
-        div = valrom // romanos[listanum]
-        valrom %= romanos[listanum]
-        total += romanos[listanum] * div
-        listanum += 1
-
-
-    return total
+    def romanoEntero(self,romano):
+        resultado = ""
+        for valor,x in sorted(self.romanos.items(), reverse=True):
+            while numero >= valor:
+                resultado += x
+                numero -= valor
+        return resultado
 
 if __name__ == "__main__":
     tests = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "XIV", "CXC", "MIM","XXX"]
     for test in tests:
         print(test, Romano.roman2int(test))
-    testeo = [12,5,20,4]
-    for testt in testeo:
-        print(testt,int2roman(testt))
+     
